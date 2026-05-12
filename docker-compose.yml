@@ -1,0 +1,12 @@
+services:
+  web:
+    build: ./app  #node container
+    ports:
+      - "3000:3000"   # use 5001 if 5000 is busy
+    depends_on:
+      - db
+
+  db:    #db container
+    image: mongo
+    ports:
+      - "27017:27017"
